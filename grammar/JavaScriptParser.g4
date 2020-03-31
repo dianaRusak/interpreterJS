@@ -1,10 +1,12 @@
-parser grammar parserGrammJS;
+parser grammar JavaScriptParser;
 
 options {
     tokenVocab=JavaScriptLexer;
-    superClass=JavaScriptBaseParser;
+    superClass=JavaScriptParserBase;
 }
-
+@header {
+    #include "../../grammar/JavaScriptParserBase.h"
+}
 program
     : HashBangLine? sourceElements? EOF
     ;
@@ -26,13 +28,13 @@ statement
     | continueStatement
     | breakStatement
     | returnStatement
-    | yieldStatement
-    | withStatement
-    | labelledStatement
-    | switchStatement
-    | throwStatement
-    | tryStatement
-    | debuggerStatement
+//    | yieldStatement
+//    | withStatement
+//    | labelledStatement
+//    | switchStatement
+//    | throwStatement
+//    | tryStatement
+//    | debuggerStatement
     | functionDeclaration
     ;
 
@@ -106,7 +108,7 @@ emptyStatement
     ;
 
 expressionStatement
-    : {this.notOpenBraceAndNotFunction()}? expressionSequence eos
+    : {this->notOpenBraceAndNotFunction()}? expressionSequence eos
     ;
 
 ifStatement
@@ -119,82 +121,82 @@ iterationStatement
     | While '(' expressionSequence ')' statement                                                                        # WhileStatement
     | For '(' (expressionSequence | variableDeclarationList)? ';' expressionSequence? ';' expressionSequence? ')' statement   # ForStatement
     | For '(' (singleExpression | variableDeclarationList) In expressionSequence ')' statement                                # ForInStatement
-    // strange, 'of' is an identifier. and this.p("of") not work in sometime.
-    | For Await? '(' (singleExpression | variableDeclarationList) Identifier{this.p("of")}? expressionSequence ')' statement  # ForOfStatement
+    // strange, 'of' is an identifier. and this->p("of") not work in sometime.
+    | For /*Await?*/ '(' (singleExpression | variableDeclarationList) Identifier{this->p("of")}? expressionSequence ')' statement  # ForOfStatement
     ;
 
 varModifier  // let, const - ECMAScript 6
-    : Var
-    | Let
+    : Let
+    | Var
     | Const
     ;
 
 continueStatement
-    : Continue ({this.notLineTerminator()}? Identifier)? eos
+    : Continue ({this->notLineTerminator()}? Identifier)? eos
     ;
 
 breakStatement
-    : Break ({this.notLineTerminator()}? Identifier)? eos
+    : Break ({this->notLineTerminator()}? Identifier)? eos
     ;
 
 returnStatement
-    : Return ({this.notLineTerminator()}? expressionSequence)? eos
+    : Return ({this->notLineTerminator()}? expressionSequence)? eos
     ;
 
-yieldStatement
-    : Yield ({this.notLineTerminator()}? expressionSequence)? eos
-    ;
+//yieldStatement
+//    : Yield ({this->notLineTerminator()}? expressionSequence)? eos
+//    ;
 
-withStatement
-    : With '(' expressionSequence ')' statement
-    ;
+//withStatement
+//    : With '(' expressionSequence ')' statement
+//    ;
 
-switchStatement
-    : Switch '(' expressionSequence ')' caseBlock
-    ;
+//switchStatement
+//    : Switch '(' expressionSequence ')' caseBlock
+//    ;
 
-caseBlock
-    : '{' caseClauses? (defaultClause caseClauses?)? '}'
-    ;
+//caseBlock
+//    : '{' caseClauses? (defaultClause caseClauses?)? '}'
+//    ;
 
-caseClauses
-    : caseClause+
-    ;
+//caseClauses
+//    : caseClause+
+//    ;
 
-caseClause
-    : Case expressionSequence ':' statementList?
-    ;
+//caseClause
+//    : Case expressionSequence ':' statementList?
+//    ;
 
 defaultClause
     : Default ':' statementList?
     ;
 
-labelledStatement
-    : Identifier ':' statement
-    ;
+//labelledStatement
+//    : Identifier ':' statement
+//    ;
 
-throwStatement
-    : Throw {this.notLineTerminator()}? expressionSequence eos
-    ;
+//throwStatement
+//    : Throw {this->notLineTerminator()}? expressionSequence eos
+//    ;
+//
+//tryStatement
+//    : Try block (catchProduction finallyProduction? | finallyProduction)
+//    ;
+//
+//catchProduction
+//    : Catch ('(' assignable? ')')? block
+//    ;
+//
+//finallyProduction
+//    : Finally block
+//    ;
 
-tryStatement
-    : Try block (catchProduction finallyProduction? | finallyProduction)
-    ;
-
-catchProduction
-    : Catch ('(' assignable? ')')? block
-    ;
-
-finallyProduction
-    : Finally block
-    ;
-
-debuggerStatement
-    : Debugger eos
-    ;
+//debuggerStatement
+//    : Debugger eos
+//    ;
 
 functionDeclaration
-    : Async? Function '*'? Identifier '(' formalParameterList? ')' '{' functionBody '}'
+    : /*Async?*/ Function '*'? Identifier '(' formalParameterList? ')' '{' functionBody '}'
     ;
 
 classDeclaration
@@ -206,7 +208,7 @@ classTail
     ;
 
 classElement
-    : (Static | {this.n("static")}? Identifier | Async)* methodDefinition
+    : (Static | {this->n("static")}? Identifier /*| Async*/)* methodDefinition
     | emptyStatement
     | '#'? propertyName '=' singleExpression
     ;
@@ -257,7 +259,7 @@ objectLiteral
 propertyAssignment
     : propertyName ':' singleExpression                                             # PropertyExpressionAssignment
     | '[' singleExpression ']' ':' singleExpression                                 # ComputedPropertyExpressionAssignment
-    | Async? '*'? propertyName '(' formalParameterList?  ')'  '{' functionBody '}'  # FunctionProperty
+    | /*Async?*/ '*'? propertyName '(' formalParameterList?  ')'  '{' functionBody '}'  # FunctionProperty
     | getter '(' ')' '{' functionBody '}'                                           # PropertyGetter
     | setter '(' formalParameterArg ')' '{' functionBody '}'                        # PropertySetter
     | Ellipsis? singleExpression                                                    # PropertyShorthand
@@ -290,8 +292,8 @@ singleExpression
     | singleExpression arguments                                            # ArgumentsExpression
     | New singleExpression arguments?                                       # NewExpression
     | New '.' Identifier                                                    # MetaExpression // new.target
-    | singleExpression {this.notLineTerminator()}? '++'                     # PostIncrementExpression
-    | singleExpression {this.notLineTerminator()}? '--'                     # PostDecreaseExpression
+    | singleExpression {this->notLineTerminator()}? '++'                     # PostIncrementExpression
+    | singleExpression {this->notLineTerminator()}? '--'                     # PostDecreaseExpression
     | Delete singleExpression                                               # DeleteExpression
     | Void singleExpression                                                 # VoidExpression
     | Typeof singleExpression                                               # TypeofExpression
@@ -301,14 +303,14 @@ singleExpression
     | '-' singleExpression                                                  # UnaryMinusExpression
     | '~' singleExpression                                                  # BitNotExpression
     | '!' singleExpression                                                  # NotExpression
-    | Await singleExpression                                                # AwaitExpression
+//    | Await singleExpression                                                # AwaitExpression
     | <assoc=right> singleExpression '**' singleExpression                  # PowerExpression
     | singleExpression ('*' | '/' | '%') singleExpression                   # MultiplicativeExpression
     | singleExpression ('+' | '-') singleExpression                         # AdditiveExpression
     | singleExpression '??' singleExpression                                # CoalesceExpression
     | singleExpression ('<<' | '>>' | '>>>') singleExpression               # BitShiftExpression
     | singleExpression ('<' | '>' | '<=' | '>=') singleExpression           # RelationalExpression
-    | singleExpression Instanceof singleExpression                          # InstanceofExpression
+//    | singleExpression Instanceof singleExpression                          # InstanceofExpression
     | singleExpression In singleExpression                                  # InExpression
     | singleExpression ('==' | '!=' | '===' | '!==') singleExpression       # EqualityExpression
     | singleExpression '&' singleExpression                                 # BitAndExpression
@@ -321,7 +323,7 @@ singleExpression
     | <assoc=right> singleExpression assignmentOperator singleExpression    # AssignmentOperatorExpression
     | Import '(' singleExpression ')'                                       # ImportExpression
     | singleExpression TemplateStringLiteral                                # TemplateStringExpression  // ECMAScript 6
-    | yieldStatement                                                        # YieldExpression // ECMAScript 6
+//    | yieldStatement                                                        # YieldExpression // ECMAScript 6
     | This                                                                  # ThisExpression
     | Identifier                                                            # IdentifierExpression
     | Super                                                                 # SuperExpression
@@ -333,14 +335,14 @@ singleExpression
 
 assignable
     : Identifier
-    | arrayLiteral
-    | objectLiteral
+//    | arrayLiteral
+//    | objectLiteral
     ;
 
 anoymousFunction
     : functionDeclaration                                                       # FunctionDecl
-    | Async? Function '*'? '(' formalParameterList? ')' '{' functionBody '}'    # AnoymousFunctionDecl
-    | Async? arrowFunctionParameters '=>' arrowFunctionBody                     # ArrowFunction
+    | /*Async?*/ Function '*'? '(' formalParameterList? ')' '{' functionBody '}'    # AnoymousFunctionDecl
+    | /*Async?*/ arrowFunctionParameters '=>' arrowFunctionBody                     # ArrowFunction
     ;
 
 arrowFunctionParameters
@@ -380,17 +382,17 @@ literal
 
 numericLiteral
     : DecimalLiteral
-    | HexIntegerLiteral
-    | OctalIntegerLiteral
-    | OctalIntegerLiteral2
-    | BinaryIntegerLiteral
+//    | HexIntegerLiteral
+//    | OctalIntegerLiteral
+//    | OctalIntegerLiteral2
+//    | BinaryIntegerLiteral
     ;
 
 bigintLiteral
     : BigDecimalIntegerLiteral
-    | BigHexIntegerLiteral
-    | BigOctalIntegerLiteral
-    | BigBinaryIntegerLiteral
+//    | BigHexIntegerLiteral
+//    | BigOctalIntegerLiteral
+//    | BigBinaryIntegerLiteral
     ;
 
 identifierName
@@ -407,43 +409,20 @@ reservedWord
 keyword
     : Break
     | Do
-    ///////////////////
-    //| Instanceof
-    ///////////////////
     | Typeof
-    ///////////////////
-    //| Case
-    ///////////////////
     | Else
     | New
-    | Var
-    ///////////////////
-    //| Catch
-    //| Finally
-    ///////////////////
+    | Function
+    | This
     | Return
     | Void
     | Continue
     | For
-    | Switch
     | While
-    | Debugger
-    | Function
-    | This
-    ///////////////////
-    //| With
-    ///////////////////
     | Default
     | If
-    ///////////////////
-    //| Throw
-    ///////////////////
     | Delete
     | In
-    ///////////////////
-    //| Try
-    ///////////////////
-
     | Class
     | Enum
     | Extends
@@ -459,26 +438,36 @@ keyword
     | Package
     | Protected
     | Static
-    ///////////////////
-    //| Yield
-    //| Async
-    ///////////////////
-    | Await
     | From
     | As
+    ///////////////////
+    //| Instanceof
+    //| Case
+    //| Var
+    //| Catch
+    //| Finally
+    //| Switch
+    //| Debugger
+    //| With
+    //| Throw
+    //| Try
+    //| Yield
+    //| Async
+    //| Await
+    ///////////////////
     ;
 
 getter
-    : Identifier {this.p("get")}? propertyName
+    : Identifier {this->p("get")}? propertyName
     ;
 
 setter
-    : Identifier {this.p("set")}? propertyName
+    : Identifier {this->p("set")}? propertyName
     ;
 
 eos
     : SemiColon
     | EOF
-    | {this.lineTerminatorAhead()}?
-    | {this.closeBrace()}?
+    | {this->lineTerminatorAhead()}?
+    | {this->closeBrace()}?
     ;
