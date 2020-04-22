@@ -2,22 +2,25 @@
 #include "gen/JavaScriptLexer.h"
 #include "gen/JavaScriptParser.h"
 #include "antlr4-runtime.h"
-//#include ""
+#include "string"
+#include "Visitor.h"
+
 using namespace antlr4;
 
 int main() {
-    ANTLRInputStream input("var a = 4;");
+    ANTLRInputStream input("a || b && c | d ^ e & f == g < h >>> i + j * k");
     JavaScriptLexer lexer(&input);
     CommonTokenStream tokens(&lexer);
+    JavaScriptParser parser(&tokens);
 
     tokens.fill();
-    for (auto token : tokens.getTokens()) {
-        std::cout << token->toString() << std::endl;
-    }
+    Visitor visitor;
 
-    JavaScriptParser parser(&tokens);
     tree::ParseTree *tree = parser.program();
+    visitor.visit(tree);
+    std::cout << visitor.getTreeString().str();
+//    std::cout << tree->toStringTree(&parser, true) << std::endl;
 
-    std::cout << tree->toStringTree(&parser) << std::endl;
     return 0;
+
 }

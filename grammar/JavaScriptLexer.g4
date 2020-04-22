@@ -86,7 +86,6 @@ DecimalLiteral:                 DecimalIntegerLiteral '.' [0-9] [0-9_]* Exponent
 
 /// Numeric Literals
 
-///////////////////
 HexIntegerLiteral:              '0' [xX] [0-9a-fA-F] HexDigit*;
 OctalIntegerLiteral:            '0' [0-7]+ {!this->IsStrictMode()}?;
 OctalIntegerLiteral2:           '0' [oO] [0-7] [_0-7]*;
@@ -96,42 +95,37 @@ BigHexIntegerLiteral:           '0' [xX] [0-9a-fA-F] HexDigit* 'n';
 BigOctalIntegerLiteral:         '0' [oO] [0-7] [_0-7]* 'n';
 BigBinaryIntegerLiteral:        '0' [bB] [01] [_01]* 'n';
 BigDecimalIntegerLiteral:       DecimalIntegerLiteral 'n';
-///////////////////
 
 /// Keywords
 
 Break:                          'break';
-Continue:                       'continue';
 Do:                             'do';
-While:                          'while';
 Typeof:                         'typeof';
 Else:                           'else';
 New:                            'new';
+Var:                            'var';
+From:                           'from';
+Return:                         'return';
+As:                             'as';
+Void:                           'void';
+Continue:                       'continue';
+For:                            'for';
+While:                          'while';
 Function:                       'function';
 This:                           'this';
+Default:                        'default';
 If:                             'if';
 Delete:                         'delete';
 In:                             'in';
-As:                             'as';
-From:                           'from';
-Return:                         'return';
-Void:                           'void';
-For:                            'for';
-///////////////////
-///////////////////
-//Instanceof:                     'instanceof';
-//Case:                           'case';
-Var:                            'var';
-//Catch:                          'catch';
-//Finally:                        'finally';
-//Switch:                         'switch';
-//Debugger:                       'debugger';
-//With:                           'with';
-Default:                        'default';
-//Throw:                          'throw';
-//Try:                            'try';
-///////////////////
-///////////////////
+Instanceof:                     'instanceof'; /* */
+Case:                           'case'; /* */
+Catch:                          'catch'; /* */
+Finally:                        'finally'; /* */
+Switch:                         'switch'; /* */
+Debugger:                       'debugger'; /* */
+With:                           'with'; /* */
+Throw:                          'throw'; /* */
+Try:                            'try'; /* */
 
 /// Future Reserved Words
 
@@ -140,31 +134,29 @@ Enum:                           'enum';
 Extends:                        'extends';
 Super:                          'super';
 Const:                          'const';
-///////////////////
 Export:                         'export';
 Import:                         'import';
-//Async:                          'async';
-//Await:                          'await';
-///////////////////
+
+Async:                          'async'; /* */
+Await:                          'await'; /* */
 
 /// The following tokens are also considered to be FutureReservedWords
 /// when parsing strict mode
 
 Implements:                     'implements' {this->IsStrictMode()}?;
-Let:                            'let' {this->IsStrictMode()}?;
+StrictLet:                      'let' {this->IsStrictMode()}?;
+NonStrictLet:                   'let' {!this->IsStrictMode()}?;
 Private:                        'private' {this->IsStrictMode()}?;
 Public:                         'public' {this->IsStrictMode()}?;
 Interface:                      'interface' {this->IsStrictMode()}?;
 Package:                        'package' {this->IsStrictMode()}?;
 Protected:                      'protected' {this->IsStrictMode()}?;
 Static:                         'static' {this->IsStrictMode()}?;
-///////////////////
-//Yield:                          'yield' {this->IsStrictMode()}?;
-///////////////////
+Yield:                          'yield' {this->IsStrictMode()}?; /* */
+
 /// Identifier Names and Identifiers
 
 Identifier:                     IdentifierStart IdentifierPart*;
-
 /// String Literals
 StringLiteral:                 ('"' DoubleStringCharacter* '"'
              |                  '\'' SingleStringCharacter* '\'') {this->ProcessStringLiteral();}
@@ -180,9 +172,9 @@ LineTerminator:                 [\r\n\u2028\u2029] -> channel(HIDDEN);
 /// Comments
 
 
-//HtmlComment:                    '<!--' .*? '-->' -> channel(HIDDEN);
-//CDataComment:                   '<![CDATA[' .*? ']]>' -> channel(HIDDEN);
-//UnexpectedCharacter:            . -> channel(ERROR);
+HtmlComment:                    '<!--' .*? '-->' -> channel(HIDDEN);
+CDataComment:                   '<![CDATA[' .*? ']]>' -> channel(HIDDEN);
+UnexpectedCharacter:            . -> channel(ERROR);
 
 // Fragment rules
 
@@ -198,8 +190,8 @@ fragment SingleStringCharacter
     ;
 fragment EscapeSequence
     : CharacterEscapeSequence
-    //| '0' // no digit ahead! TODO
-//    | HexEscapeSequence
+    | '0' // no digit ahead! TODO
+    | HexEscapeSequence
     | UnicodeEscapeSequence
     | ExtendedUnicodeEscapeSequence
     ;
@@ -232,11 +224,9 @@ fragment EscapeCharacter
 fragment LineContinuation
     : '\\' [\r\n\u2028\u2029]
     ;
-
 fragment HexDigit
     : [_0-9a-fA-F]
     ;
-
 fragment DecimalIntegerLiteral
     : '0'
     | [1-9] [0-9_]*
