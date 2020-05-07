@@ -316,7 +316,7 @@ singleExpression
     | singleExpression '|' singleExpression                                 # BitOrExpression
     | singleExpression '&&' singleExpression                                # LogicalAndExpression
     | singleExpression '||' singleExpression                                # LogicalOrExpression
-    | singleExpression '?' singleExpression ':' singleExpression            # TernaryExpression
+    | singleExpression '?' singleExpression ':' singleExpression            # TernaryExpression  /* */
     | <assoc=right> singleExpression '=' singleExpression                   # AssignmentExpression
     | <assoc=right> singleExpression assignmentOperator singleExpression    # AssignmentOperatorExpression
     | Import '(' singleExpression ')'                                       # ImportExpression

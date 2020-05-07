@@ -146,7 +146,7 @@ public:
 //
 //    antlrcpp::Any visitTemplateStringExpression(JavaScriptParser::TemplateStringExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitTernaryExpression(JavaScriptParser::TernaryExpressionContext *ctx) override;
+    antlrcpp::Any visitTernaryExpression(JavaScriptParser::TernaryExpressionContext *ctx) override;
 //
     antlrcpp::Any visitLogicalAndExpression(JavaScriptParser::LogicalAndExpressionContext *ctx) override;
 //
@@ -200,11 +200,11 @@ public:
 //
     antlrcpp::Any visitBitShiftExpression(JavaScriptParser::BitShiftExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitParenthesizedExpression(JavaScriptParser::ParenthesizedExpressionContext *ctx) override;
+    antlrcpp::Any visitParenthesizedExpression(JavaScriptParser::ParenthesizedExpressionContext *ctx) override;
 //
     antlrcpp::Any visitAdditiveExpression(JavaScriptParser::AdditiveExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitRelationalExpression(JavaScriptParser::RelationalExpressionContext *ctx) override;
+    antlrcpp::Any visitRelationalExpression(JavaScriptParser::RelationalExpressionContext *ctx) override;
 //
 //    antlrcpp::Any visitPostIncrementExpression(JavaScriptParser::PostIncrementExpressionContext *ctx) override;
 //
@@ -212,7 +212,7 @@ public:
 //
     antlrcpp::Any visitBitNotExpression(JavaScriptParser::BitNotExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitNewExpression(JavaScriptParser::NewExpressionContext *ctx) override;
+    antlrcpp::Any visitNewExpression(JavaScriptParser::NewExpressionContext *ctx) override;
 //
 //    antlrcpp::Any visitLiteralExpression(JavaScriptParser::LiteralExpressionContext *ctx) override;
 //
@@ -281,6 +281,5 @@ public:
 private:
     std::stringstream treeString;
     int nesting = 0;
-    bool few = false;
 };
 

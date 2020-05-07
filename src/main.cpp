@@ -8,7 +8,7 @@
 using namespace antlr4;
 
 int main() {
-    ANTLRInputStream input("a || b && c | d ^ e & f == g < h >>> i + j * k");
+    ANTLRInputStream input("foo(bar, baz)");
     JavaScriptLexer lexer(&input);
     CommonTokenStream tokens(&lexer);
     JavaScriptParser parser(&tokens);
