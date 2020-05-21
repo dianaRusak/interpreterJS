@@ -1,0 +1,5 @@
+Program Start
+  VariableDeclaration
+    var
+      Identifier source
+      Literal 'F = []'

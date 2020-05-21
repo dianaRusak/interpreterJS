@@ -1,0 +1,5 @@
+Program Start
+  ExpressionSequence
+    Identifier x
+    Assignmentor *=
+    NumericLiteral 42

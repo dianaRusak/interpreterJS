@@ -12,7 +12,7 @@ public:
 
     antlrcpp::Any visitSourceElement(JavaScriptParser::SourceElementContext *ctx) override;
 
-    antlrcpp::Any visitStatement(JavaScriptParser::StatementContext *ctx) override;
+//    antlrcpp::Any visitStatement(JavaScriptParser::StatementContext *ctx) override;
 
     antlrcpp::Any visitVariableStatement(JavaScriptParser::VariableStatementContext *ctx) override;
 
@@ -22,7 +22,7 @@ public:
 
     antlrcpp::Any visitVarModifier(JavaScriptParser::VarModifierContext *ctx) override;
 
-    antlrcpp::Any visitEos(JavaScriptParser::EosContext *ctx) override;
+//    antlrcpp::Any visitEos(JavaScriptParser::EosContext *ctx) override;
 
 //    antlrcpp::Any visitBlock(JavaScriptParser::BlockContext *ctx) override;
 //
@@ -70,7 +70,7 @@ public:
 //
 //    antlrcpp::Any visitBreakStatement(JavaScriptParser::BreakStatementContext *ctx) override;
 //
-//    antlrcpp::Any visitReturnStatement(JavaScriptParser::ReturnStatementContext *ctx) override;
+    antlrcpp::Any visitReturnStatement(JavaScriptParser::ReturnStatementContext *ctx) override;
 //
 //    antlrcpp::Any visitYieldStatement(JavaScriptParser::YieldStatementContext *ctx) override;
 //
@@ -110,39 +110,39 @@ public:
 //
 //    antlrcpp::Any visitFormalParameterList(JavaScriptParser::FormalParameterListContext *ctx) override;
 //
-//    antlrcpp::Any visitFormalParameterArg(JavaScriptParser::FormalParameterArgContext *ctx) override;
+    antlrcpp::Any visitFormalParameterArg(JavaScriptParser::FormalParameterArgContext *ctx) override;
 //
 //    antlrcpp::Any visitLastFormalParameterArg(JavaScriptParser::LastFormalParameterArgContext *ctx) override;
 //
-//    antlrcpp::Any visitFunctionBody(JavaScriptParser::FunctionBodyContext *ctx) override;
+    antlrcpp::Any visitFunctionBody(JavaScriptParser::FunctionBodyContext *ctx) override;
 //
 //    antlrcpp::Any visitSourceElements(JavaScriptParser::SourceElementsContext *ctx) override;
 //
 //    antlrcpp::Any visitArrayLiteral(JavaScriptParser::ArrayLiteralContext *ctx) override;
 //
-//    antlrcpp::Any visitElementList(JavaScriptParser::ElementListContext *ctx) override;
+    antlrcpp::Any visitElementList(JavaScriptParser::ElementListContext *ctx) override;
 //
 //    antlrcpp::Any visitArrayElement(JavaScriptParser::ArrayElementContext *ctx) override;
 //
-//    antlrcpp::Any visitPropertyExpressionAssignment(JavaScriptParser::PropertyExpressionAssignmentContext *ctx) override;
+    antlrcpp::Any visitPropertyExpressionAssignment(JavaScriptParser::PropertyExpressionAssignmentContext *ctx) override;
 //
-//    antlrcpp::Any visitComputedPropertyExpressionAssignment(JavaScriptParser::ComputedPropertyExpressionAssignmentContext *ctx) override;
+    antlrcpp::Any visitComputedPropertyExpressionAssignment(JavaScriptParser::ComputedPropertyExpressionAssignmentContext *ctx) override;
 //
-//    antlrcpp::Any visitFunctionProperty(JavaScriptParser::FunctionPropertyContext *ctx) override;
+    antlrcpp::Any visitFunctionProperty(JavaScriptParser::FunctionPropertyContext *ctx) override;
 //
 //    antlrcpp::Any visitPropertyGetter(JavaScriptParser::PropertyGetterContext *ctx) override;
 //
-//    antlrcpp::Any visitPropertySetter(JavaScriptParser::PropertySetterContext *ctx) override;
+    antlrcpp::Any visitPropertySetter(JavaScriptParser::PropertySetterContext *ctx) override;
 //
 //    antlrcpp::Any visitPropertyShorthand(JavaScriptParser::PropertyShorthandContext *ctx) override;
 //
-//    antlrcpp::Any visitPropertyName(JavaScriptParser::PropertyNameContext *ctx) override;
+    antlrcpp::Any visitPropertyName(JavaScriptParser::PropertyNameContext *ctx) override;
 //
-//    antlrcpp::Any visitArguments(JavaScriptParser::ArgumentsContext *ctx) override;
+    antlrcpp::Any visitArguments(JavaScriptParser::ArgumentsContext *ctx) override;
 //
 //    antlrcpp::Any visitArgument(JavaScriptParser::ArgumentContext *ctx) override;
 //
-//    antlrcpp::Any visitExpressionSequence(JavaScriptParser::ExpressionSequenceContext *ctx) override;
+    antlrcpp::Any visitExpressionSequence(JavaScriptParser::ExpressionSequenceContext *ctx) override;
 //
 //    antlrcpp::Any visitTemplateStringExpression(JavaScriptParser::TemplateStringExpressionContext *ctx) override;
 //
@@ -154,7 +154,7 @@ public:
 //
     antlrcpp::Any visitPreIncrementExpression(JavaScriptParser::PreIncrementExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitObjectLiteralExpression(JavaScriptParser::ObjectLiteralExpressionContext *ctx) override;
+    antlrcpp::Any visitObjectLiteralExpression(JavaScriptParser::ObjectLiteralExpressionContext *ctx) override;
 //
 //    antlrcpp::Any visitMetaExpression(JavaScriptParser::MetaExpressionContext *ctx) override;
 //
@@ -170,7 +170,7 @@ public:
 //
 //    antlrcpp::Any visitAwaitExpression(JavaScriptParser::AwaitExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitThisExpression(JavaScriptParser::ThisExpressionContext *ctx) override;
+    antlrcpp::Any visitThisExpression(JavaScriptParser::ThisExpressionContext *ctx) override;
 //
 //    antlrcpp::Any visitFunctionExpression(JavaScriptParser::FunctionExpressionContext *ctx) override;
 //
@@ -218,11 +218,11 @@ public:
 //
 //    antlrcpp::Any visitArrayLiteralExpression(JavaScriptParser::ArrayLiteralExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitMemberDotExpression(JavaScriptParser::MemberDotExpressionContext *ctx) override;
+    antlrcpp::Any visitMemberDotExpression(JavaScriptParser::MemberDotExpressionContext *ctx) override;
 //
 //    antlrcpp::Any visitClassExpression(JavaScriptParser::ClassExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitMemberIndexExpression(JavaScriptParser::MemberIndexExpressionContext *ctx) override;
+    antlrcpp::Any visitMemberIndexExpression(JavaScriptParser::MemberIndexExpressionContext *ctx) override;
 //
 //    antlrcpp::Any visitIdentifierExpression(JavaScriptParser::IdentifierExpressionContext *ctx) override;
 //
@@ -242,33 +242,33 @@ public:
 //
 //    antlrcpp::Any visitFunctionDecl(JavaScriptParser::FunctionDeclContext *ctx) override;
 //
-//    antlrcpp::Any visitAnoymousFunctionDecl(JavaScriptParser::AnoymousFunctionDeclContext *ctx) override;
+    antlrcpp::Any visitAnoymousFunctionDecl(JavaScriptParser::AnoymousFunctionDeclContext *ctx) override;
 //
 //    antlrcpp::Any visitArrowFunction(JavaScriptParser::ArrowFunctionContext *ctx) override;
 //
-//    antlrcpp::Any visitArrowFunctionParameters(JavaScriptParser::ArrowFunctionParametersContext *ctx) override;
+    antlrcpp::Any visitArrowFunctionParameters(JavaScriptParser::ArrowFunctionParametersContext *ctx) override;
 //
 //    antlrcpp::Any visitArrowFunctionBody(JavaScriptParser::ArrowFunctionBodyContext *ctx) override;
 //
     antlrcpp::Any visitAssignmentOperator(JavaScriptParser::AssignmentOperatorContext *ctx) override;
 //
-//    antlrcpp::Any visitLiteral(JavaScriptParser::LiteralContext *ctx) override;
+    antlrcpp::Any visitLiteral(JavaScriptParser::LiteralContext *ctx) override;
 //
     antlrcpp::Any visitNumericLiteral(JavaScriptParser::NumericLiteralContext *ctx) override;
 //
 //    antlrcpp::Any visitBigintLiteral(JavaScriptParser::BigintLiteralContext *ctx) override;
 //
-//    antlrcpp::Any visitGetter(JavaScriptParser::GetterContext *ctx) override;
+    antlrcpp::Any visitGetter(JavaScriptParser::GetterContext *ctx) override;
 //
-//    antlrcpp::Any visitSetter(JavaScriptParser::SetterContext *ctx) override;
+    antlrcpp::Any visitSetter(JavaScriptParser::SetterContext *ctx) override;
 //
 //    antlrcpp::Any visitIdentifierName(JavaScriptParser::IdentifierNameContext *ctx) override;
 //
     antlrcpp::Any visitIdentifier(JavaScriptParser::IdentifierContext *ctx) override;
 //
-//    antlrcpp::Any visitReservedWord(JavaScriptParser::ReservedWordContext *ctx) override;
+    antlrcpp::Any visitReservedWord(JavaScriptParser::ReservedWordContext *ctx) override;
 //
-//    antlrcpp::Any visitKeyword(JavaScriptParser::KeywordContext *ctx) override;
+    antlrcpp::Any visitKeyword(JavaScriptParser::KeywordContext *ctx) override;
 //
 //    antlrcpp::Any visitLet(JavaScriptParser::LetContext *ctx) override;
 
@@ -280,6 +280,7 @@ public:
 
 private:
     std::stringstream treeString;
-    int nesting = 0;
+    int nesting = 0, b = 0;
+
 };
 

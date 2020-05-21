@@ -1,0 +1,18 @@
+Program Start
+--ExpressionSequence
+----Literal "use strict"
+--ExpressionSequence
+----AssignmentExpression =
+------Identifier x
+------ObjectLiteral {
+--------PropertyExpressionAssignment
+----------PropertyName
+------------Identifier y
+----------Literal
+------------NumericLiteral 1
+--------PropertyExpressionAssignment
+----------PropertyName
+------------Identifier y
+----------Literal
+------------NumericLiteral 1
+------}

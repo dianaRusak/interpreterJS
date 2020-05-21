@@ -1,0 +1,5 @@
+Program Start
+  ExpressionSequence
+    MultiplicativeExpression *
+      Identifier x
+      Identifier y

@@ -1,0 +1,20 @@
+Program Start
+--ExpressionSequence
+----Literal "use strict"
+--VariableDeclaration 2
+----var
+------Identifier x
+------ObjectLiteral {
+--------Getter
+----------Identifier get
+----------PropertyName
+------------Identifier i
+--------FunctionBody {
+--------}
+--------Getter
+----------Identifier get
+----------PropertyName
+------------Identifier i
+--------FunctionBody {
+--------}
+------}

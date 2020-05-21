@@ -1,26 +1,11 @@
-#include <iostream>
-#include "gen/JavaScriptLexer.h"
-#include "gen/JavaScriptParser.h"
-#include "antlr4-runtime.h"
-#include "string"
-#include "Visitor.h"
-
-using namespace antlr4;
+#include <ParseManager.h>
+#include <iosfwd>
+#include <sstream>
 
 int main() {
-    ANTLRInputStream input("foo(bar, baz)");
-    JavaScriptLexer lexer(&input);
-    CommonTokenStream tokens(&lexer);
-    JavaScriptParser parser(&tokens);
-
-    tokens.fill();
-    Visitor visitor;
-
-    tree::ParseTree *tree = parser.program();
-    visitor.visit(tree);
-    std::cout << visitor.getTreeString().str();
-//    std::cout << tree->toStringTree(&parser, true) << std::endl;
-
+    std::string input = "input.txt", output = "output.txt";
+    auto pm = new ParseManager(input, output);
+    pm->Parse();
     return 0;
 
 }

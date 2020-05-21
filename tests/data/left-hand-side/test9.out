@@ -1,0 +1,15 @@
+Program Start
+  ExpressionSequence
+    Arguments '.' 
+      Arguments '.' 
+        Identifier universe
+        Arguments '(' 
+          NumericLiteral 42
+        Arguments ')' 
+        Identifier galaxies
+      Arguments '(' 
+        NumericLiteral 14
+        NumericLiteral 3
+        NumericLiteral 77
+      Arguments ')' 
+      Identifier milkyway

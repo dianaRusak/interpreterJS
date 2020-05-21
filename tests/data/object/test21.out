@@ -1,0 +1,16 @@
+Program Start
+--ExpressionSequence
+----ParenthesizedExpression (
+------ExpressionSequence
+--------ObjectLiteral {
+----------PropertyExpressionAssignment
+------------PropertyName
+------------[
+--------------Identifier a
+------------]
+------------ArrowFunctionParameters (
+------------)
+------------ObjectLiteral {
+------------}
+--------}
+----)

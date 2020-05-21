@@ -1,0 +1,5 @@
+Program Start
+  ExpressionSequence
+    AssignmentExpression =
+      Identifier x
+? and : will not be implemented

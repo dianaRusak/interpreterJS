@@ -1,0 +1,7 @@
+Program Start
+  ExpressionSequence
+    BitOrExpression |
+      BitAndExpression &
+        Identifier x
+        Identifier y
+      Identifier z

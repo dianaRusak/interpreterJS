@@ -1,0 +1,8 @@
+Program Start
+  ExpressionSequence
+    BitShiftExpression <<
+      AdditiveExpression +
+        NumericLiteral 4
+        NumericLiteral 5
+      ExpressionSequence
+        NumericLiteral 6

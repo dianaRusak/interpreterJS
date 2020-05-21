@@ -1,0 +1,5 @@
+Program Start
+  ExpressionSequence
+    AssignmentExpression =
+      Identifier arguments
+      NumericLiteral 42

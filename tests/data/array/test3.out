@@ -1,0 +1,6 @@
+Program Start
+  ExpressionSequence
+    AssignmentExpression =
+      Identifier 日本語
+      ElementList
+        null

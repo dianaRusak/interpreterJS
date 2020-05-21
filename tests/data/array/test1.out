@@ -1,0 +1,6 @@
+Program Start
+  ExpressionSequence
+    AssignmentExpression =
+      Identifier x
+      ElementList
+        null

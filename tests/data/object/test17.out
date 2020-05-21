@@ -1,0 +1,18 @@
+Program Start
+--ExpressionSequence
+----ParenthesizedExpression (
+------ExpressionSequence
+--------ObjectLiteral {
+----------Getter
+------------Identifier get
+------------PropertyName
+--------------Identifier i
+----------FunctionBody {
+----------}
+----------PropertyExpressionAssignment
+------------PropertyName
+--------------Identifier i
+------------Literal
+--------------NumericLiteral 42
+--------}
+----)
