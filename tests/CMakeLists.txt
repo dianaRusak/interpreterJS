@@ -18,7 +18,9 @@ SET(TEST_SOURCES
         data/numeric-literal/test_test.cpp
         data/object/test_test.cpp
         data/other/test_test.cpp
-        data/postfix/test_test.cpp)
+        data/postfix/test_test.cpp
+        data/relational/test_test.cpp
+        data/unary/test_test.cpp)
 
 add_executable(interpreter_tests ${TEST_SOURCES})
 target_link_libraries(interpreter_tests PRIVATE interpreter_lib catch)

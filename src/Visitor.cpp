@@ -106,6 +106,7 @@ antlrcpp::Any Visitor::visitAssignmentOperator(JavaScriptParser::AssignmentOpera
 }
 
 antlrcpp::Any Visitor::visitBitNotExpression(JavaScriptParser::BitNotExpressionContext *ctx) {
+    nesting += 2;
     printWhiteSpace();
     treeString << "BitNotExpression " + ctx->BitNot()->getText() << std::endl;
     auto vc = visitChildren(ctx);
@@ -642,12 +643,32 @@ antlrcpp::Any Visitor::visitThisExpression(JavaScriptParser::ThisExpressionConte
     nesting += 2;
     printWhiteSpace();
     std::string lit;
-    if (ctx->This()) lit = ctx->This()->getText();
-    treeString << lit << std::endl;
+    if (ctx->This()) lit = " " + ctx->This()->getText();
+    treeString << "ThisExpression" << lit << std::endl;
     auto vc = visitChildren(ctx);
     nesting -= 2;
     return vc;
 
+}
+
+antlrcpp::Any Visitor::visitInExpression(JavaScriptParser::InExpressionContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    std::string lit;
+    if (ctx->In()) lit = " " + ctx->In()->getText();
+    treeString << "InExpression" << lit << std::endl;
+    auto vc = visitChildren(ctx);
+    nesting -= 2;
+    return vc;
+}
+
+antlrcpp::Any Visitor::visitInstanceofExpression(JavaScriptParser::InstanceofExpressionContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    treeString << "InstanceofExpression will not be implemented" << std::endl;
+    auto vc = visitChildren(ctx);
+    nesting -= 2;
+    return vc;
 }
 
 

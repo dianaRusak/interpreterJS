@@ -158,7 +158,7 @@ public:
 //
 //    antlrcpp::Any visitMetaExpression(JavaScriptParser::MetaExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitInExpression(JavaScriptParser::InExpressionContext *ctx) override;
+    antlrcpp::Any visitInExpression(JavaScriptParser::InExpressionContext *ctx) override;
 //
     antlrcpp::Any visitLogicalOrExpression(JavaScriptParser::LogicalOrExpressionContext *ctx) override;
 //
@@ -182,7 +182,7 @@ public:
 //
     antlrcpp::Any visitTypeofExpression(JavaScriptParser::TypeofExpressionContext *ctx) override;
 //
-//    antlrcpp::Any visitInstanceofExpression(JavaScriptParser::InstanceofExpressionContext *ctx) override;
+    antlrcpp::Any visitInstanceofExpression(JavaScriptParser::InstanceofExpressionContext *ctx) override;
 //
     antlrcpp::Any visitUnaryPlusExpression(JavaScriptParser::UnaryPlusExpressionContext *ctx) override;
 //
