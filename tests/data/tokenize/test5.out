@@ -1,0 +1,8 @@
+Program Start
+--ExpressionSequence
+----ParenthesizedExpression (
+------ExpressionSequence
+--------Literal false
+----)
+--ExpressionSequence
+----Literal /42/

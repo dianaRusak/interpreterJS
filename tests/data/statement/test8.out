@@ -1,0 +1,14 @@
+Program Start
+--ExpressionSequence
+----Literal "use strict"
+--IfStatement if (
+----ExpressionSequence
+------Literal true
+----visitFunctionDecl function
+------Identifier  f
+------FunctionBody {
+------}
+--else
+----{
+----}
+--)

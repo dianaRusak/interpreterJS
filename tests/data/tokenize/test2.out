@@ -1,0 +1,6 @@
+Program Start
+--VariableDeclaration 2
+----var
+------Identifier answer
+------Literal
+--------NumericLiteral 42

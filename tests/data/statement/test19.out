@@ -1,0 +1,16 @@
+Program Start
+--WithStatement while (
+----ExpressionSequence
+------EqualityExpression <
+--------Identifier  x
+--------Literal
+----------NumericLiteral 10
+----{
+------ExpressionSequence
+--------PostIncrementExpression ++
+----------Identifier  x
+------ExpressionSequence
+--------PostDecreaseExpression --
+----------Identifier  y
+----}
+--)

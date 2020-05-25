@@ -1,0 +1,10 @@
+Program Start
+--IfStatement if (
+----ExpressionSequence
+------Identifier  morning
+----VariableDeclaration
+------var
+--------Identifier  x
+--------Literal
+----------NumericLiteral 0
+--)

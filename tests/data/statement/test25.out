@@ -1,0 +1,14 @@
+Program Start
+--ExpressionSequence
+----ParenthesizedExpression (
+------ExpressionSequence
+--------visitAnoymousFunctionDecl function (
+----------FunctionBody {
+------------Statement return
+--------------ExpressionSequence
+----------------MultiplicativeExpression *
+------------------Identifier  x
+------------------Identifier  y
+----------}
+--------)
+----)

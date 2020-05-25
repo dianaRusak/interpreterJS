@@ -18,7 +18,7 @@ sourceElement
     ;
 
 statement
-    : block
+    : block//
     | variableStatement
     | importStatement
     | exportStatement

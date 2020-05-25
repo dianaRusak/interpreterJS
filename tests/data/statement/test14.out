@@ -1,0 +1,8 @@
+Program Start
+--ForInStatement for (
+----Identifier  x
+----ExpressionSequence
+------let will not be implemented
+------{
+------}
+----)

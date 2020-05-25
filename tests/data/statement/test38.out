@@ -1,0 +1,9 @@
+Program Start
+--WithStatement with (
+----ExpressionSequence
+------Identifier  x
+----ExpressionSequence
+------AssignmentExpression =
+--------Identifier  foo
+--------Identifier  bar
+--)

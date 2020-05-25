@@ -1,0 +1,7 @@
+Program Start
+--WithStatement with (
+----ExpressionSequence
+------Literal false
+----ExpressionSequence
+------Literal /42/
+--)

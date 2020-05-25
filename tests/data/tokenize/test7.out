@@ -1,0 +1,11 @@
+Program Start
+--ExpressionSequence
+----ElementList
+------MultiplicativeExpression /
+--------visitAnoymousFunctionDecl function (
+----------FunctionBody {
+----------}
+--------)
+-------- }
+--------Literal
+----------NumericLiteral 42

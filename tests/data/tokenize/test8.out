@@ -1,0 +1,6 @@
+Program Start
+--Identifier f
+--FunctionBody {
+--}
+--ExpressionSequence
+----Literal /42/

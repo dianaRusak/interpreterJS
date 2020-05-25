@@ -1,0 +1,10 @@
+Program Start
+--Identifier f
+--FormalParameterList
+----FormalParameterArg ( 
+------Identifier s
+----)
+--FunctionBody {
+--}
+--ExpressionSequence
+----Literal /42/

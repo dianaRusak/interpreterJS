@@ -1,0 +1,9 @@
+Program Start
+--ForInStatement for (
+----AssignmentExpression =
+------Identifier  x
+------Literal
+--------NumericLiteral 0
+----ExpressionSequence
+------Identifier  y
+--)

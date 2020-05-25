@@ -1,0 +1,9 @@
+Program Start
+--visitFunctionDecl function
+----Identifier  a
+----FunctionBody {
+------Statement return
+--------ExpressionSequence
+----------Literal 'hello \
+  	world'
+----}
