@@ -1,10 +1,9 @@
 Program Start
---Identifier f
---FormalParameterList
+--visitFunctionDecl function
+----Identifier  f
 ----FormalParameterArg ( 
-------Identifier s
+------Identifier  s
 ----)
---FunctionBody {
---}
---ExpressionSequence
-----Literal /42/
+----FunctionBody {
+----}
+--Literal /42/

@@ -1,4 +1,0 @@
-Program Start
---ExpressionSequence
-----DeleteExpression delete
-------Identifier x

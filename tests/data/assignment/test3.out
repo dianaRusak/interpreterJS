@@ -1,5 +1,5 @@
 Program Start
-  ExpressionSequence
-    AssignmentExpression =
-      Identifier arguments
-      NumericLiteral 42
+--AssignmentExpression =
+----Identifier  arguments
+----Literal
+------NumericLiteral 42

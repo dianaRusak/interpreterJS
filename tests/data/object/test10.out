@@ -1,13 +1,12 @@
 Program Start
---ExpressionSequence
-----AssignmentExpression =
-------Identifier x
-------ObjectLiteral {
---------Getter
-----------Identifier get
-----------PropertyName
-------------ReservedWord
---------------Keyword if
---------FunctionBody {
---------}
+--AssignmentExpression =
+----Identifier  x
+----ObjectLiteral {
+------Getter
+--------Identifier  get
+--------PropertyName
+----------ReservedWord
+------------Keyword if
+------FunctionBody {
 ------}
+----}

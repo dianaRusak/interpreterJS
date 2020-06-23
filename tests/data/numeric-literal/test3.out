@@ -1,4 +1,3 @@
 Program Start
-  ExpressionSequence
-    Literal
-      NumericLiteral .14
+--Literal
+----NumericLiteral .14

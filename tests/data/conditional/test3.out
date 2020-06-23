@@ -1,5 +1,4 @@
 Program Start
-  ExpressionSequence
-    AssignmentExpression =
-      Identifier x
+--AssignmentExpression =
+----Identifier  x
 ? and : will not be implemented

@@ -30,7 +30,7 @@ antlrcpp::Any Visitor::visitParenthesizedExpression(JavaScriptParser::Parenthesi
 antlrcpp::Any Visitor::visitVariableDeclarationList(JavaScriptParser::VariableDeclarationListContext *ctx) {
     nesting += 2;
     printWhiteSpace();
-    treeString << "VariableDeclaration" << std::endl;
+    treeString << "VariableDeclarationList" << std::endl;
     auto vc = visitChildren(ctx);
     nesting -= 2;
     return vc;
@@ -55,13 +55,6 @@ antlrcpp::Any Visitor::visitVarModifier(JavaScriptParser::VarModifierContext *ct
     return vc;
 }
 
-antlrcpp::Any Visitor::visitVariableDeclaration(JavaScriptParser::VariableDeclarationContext *ctx) {
-    nesting += 2;
-    auto vc = visitChildren(ctx);
-    nesting -= 2;
-    return vc;
-}
-
 void Visitor::printWhiteSpace() {
     int buf = nesting;
     for (int i = 0; i < nesting; i++) {
@@ -79,7 +72,6 @@ antlrcpp::Any Visitor::visitIdentifier(JavaScriptParser::IdentifierContext *ctx)
     std::string lit;
     if (ctx->NonStrictLet() ) {
         treeString << ctx->NonStrictLet()->getText() + " will not be implemented"<< std::endl;
-        return 1;
     }
     if (ctx->Async()){
         treeString << ctx->Async()->getText() + " will not be implemented"<< std::endl;
@@ -103,7 +95,20 @@ antlrcpp::Any Visitor::visitNumericLiteral(JavaScriptParser::NumericLiteralConte
 antlrcpp::Any Visitor::visitAssignmentOperator(JavaScriptParser::AssignmentOperatorContext *ctx) {
     nesting += 2;
     printWhiteSpace();
-    treeString << "Assignmentor " << ctx->getText() << std::endl;
+    std::string lit;
+    if (ctx->PowerAssign()) lit = ctx->PowerAssign()->getText();
+    else if (ctx->BitOrAssign()) lit = ctx->BitOrAssign()->getText();
+    else if (ctx->BitXorAssign()) lit = ctx->BitXorAssign()->getText();
+    else if (ctx->BitAndAssign()) lit = " " + ctx->BitAndAssign()->getText();
+    else if (ctx->RightShiftLogicalAssign()) lit = " " + ctx->RightShiftLogicalAssign()->getText();
+    else if (ctx->RightShiftArithmeticAssign()) lit = " " + ctx->RightShiftArithmeticAssign()->getText();
+    else if (ctx->LeftShiftArithmeticAssign()) lit = " " + ctx->LeftShiftArithmeticAssign()->getText();
+    else if (ctx->PlusAssign()) lit = " " + ctx->PlusAssign()->getText();
+    else if (ctx->ModulusAssign()) lit = " " + ctx->ModulusAssign()->getText();
+    else if (ctx->DivideAssign()) lit = " " + ctx->DivideAssign()->getText();
+    else if (ctx->MultiplyAssign()) lit = " " + ctx->MultiplyAssign()->getText();
+
+    treeString << lit << std::endl;
     auto vc = visitChildren(ctx);
     nesting -= 2;
     return vc;
@@ -121,19 +126,14 @@ antlrcpp::Any Visitor::visitBitNotExpression(JavaScriptParser::BitNotExpressionC
 antlrcpp::Any Visitor::visitPowerExpression(JavaScriptParser::PowerExpressionContext *ctx) {
     nesting += 2;
     printWhiteSpace();
-    treeString << "PowerExpression '" + ctx->Power()->getText() << std::endl;
+    treeString << "PowerExpression " + ctx->Power()->getText() << std::endl;
     auto vc = visitChildren(ctx);
     nesting -= 2;
     return vc;
 }
 
 antlrcpp::Any Visitor::visitDeleteExpression(JavaScriptParser::DeleteExpressionContext *ctx) {
-    nesting += 2;
-    printWhiteSpace();
-    treeString << "DeleteExpression " + ctx->Delete()->getText() << std::endl;
-    auto vc = visitChildren(ctx);
-    nesting -= 2;
-    return vc;
+    treeString << ctx->Delete()->getText() << " will not be implemented" << std::endl;
 }
 
 antlrcpp::Any Visitor::visitUnaryMinusExpression(JavaScriptParser::UnaryMinusExpressionContext *ctx) {
@@ -293,15 +293,6 @@ antlrcpp::Any Visitor::visitMemberDotExpression(JavaScriptParser::MemberDotExpre
     return vc;
 }
 
-antlrcpp::Any Visitor::visitExpressionSequence(JavaScriptParser::ExpressionSequenceContext *ctx) {
-    nesting += 2;
-    printWhiteSpace();
-    treeString << "ExpressionSequence" << std::endl;
-    auto vc = visitChildren(ctx);
-    nesting -= 2;
-    return vc;
-}
-
 antlrcpp::Any Visitor::visitPropertyName(JavaScriptParser::PropertyNameContext *ctx) {
     nesting += 2;
     printWhiteSpace();
@@ -418,8 +409,14 @@ antlrcpp::Any Visitor::visitKeyword(JavaScriptParser::KeywordContext *ctx) {
     if (ctx->Do()) key = ctx->Do()->getText();
     if (ctx->Typeof()) key = ctx->Typeof()->getText();
     if (ctx->Else()) key = ctx->Else()->getText();
-    if (ctx->New()) key = ctx->New()->getText();
-    if (ctx->Void()) key = ctx->Void()->getText();
+    if (ctx->New()) {
+        treeString << ctx->New()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Void()) {
+        treeString << ctx->Void()->getText() + "will not be implemented";
+        return 1;
+    }
     if (ctx->Continue()) key = ctx->Continue()->getText();
     if (ctx->For()) key = ctx->For()->getText();
     if (ctx->While()) key = ctx->While()->getText();
@@ -428,15 +425,42 @@ antlrcpp::Any Visitor::visitKeyword(JavaScriptParser::KeywordContext *ctx) {
     if (ctx->Default()) key = ctx->Default()->getText();
     if (ctx->Delete()) key = ctx->Delete()->getText();
     if (ctx->In()) key = ctx->In()->getText();
-    if (ctx->Try()) key = ctx->Try()->getText();
-    if (ctx->Instanceof()) key = ctx->Instanceof()->getText();
-    if (ctx->Case()) key = ctx->Case()->getText();
-    if (ctx->Catch()) key = ctx->Catch()->getText();
-    if (ctx->Finally()) key = ctx->Finally()->getText();
-    if (ctx->Switch()) key = ctx->Switch()->getText();
-    if (ctx->Debugger()) key = ctx->Debugger()->getText();
-    if (ctx->With()) key = ctx->With()->getText();
-    if (ctx->Throw()) key = ctx->Throw()->getText();
+    if (ctx->Try()) {
+        treeString << ctx->Try()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Instanceof()) {
+        treeString << ctx->Instanceof()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Case()) {
+        treeString << ctx->Case()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Catch()) {
+        treeString << ctx->Catch()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Finally()) {
+        treeString << ctx->Finally()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Switch()){
+        treeString << ctx->Switch()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Debugger()){
+        treeString << ctx->Debugger()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->With()) {
+        treeString << ctx->With()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Throw()){
+        treeString << ctx->Throw()->getText() + "will not be implemented";
+        return 1;
+    }
     if (ctx->Class()) key = ctx->Class()->getText();
     if (ctx->Enum()) key = ctx->Enum()->getText();
     if (ctx->Extends()) key = ctx->Extends()->getText();
@@ -450,10 +474,22 @@ antlrcpp::Any Visitor::visitKeyword(JavaScriptParser::KeywordContext *ctx) {
     if (ctx->Interface()) key = ctx->Interface()->getText();
     if (ctx->Package()) key = ctx->Package()->getText();
     if (ctx->Protected()) key = ctx->Protected()->getText();
-    if (ctx->Static()) key = ctx->Static()->getText();
-    if (ctx->Yield()) key = ctx->Yield()->getText();
-    if (ctx->Async()) key = ctx->Async()->getText();
-    if (ctx->Await()) key = ctx->Await()->getText();
+    if (ctx->Static()){
+        treeString << ctx->Static()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Yield()){
+        treeString << ctx->Yield()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Async()){
+        treeString << ctx->Async()->getText() + "will not be implemented";
+        return 1;
+    }
+    if (ctx->Await()){
+        treeString << ctx->Await()->getText() + "will not be implemented";
+        return 1;
+    }
     if (ctx->From()) key = ctx->From()->getText();
     if (ctx->As()) key = ctx->As()->getText();
     treeString << "Keyword " << key << std::endl;
@@ -613,7 +649,7 @@ antlrcpp::Any Visitor::visitAnoymousFunctionDecl(JavaScriptParser::AnoymousFunct
     if (ctx->OpenParen()) lit = " " + ctx->OpenParen()->getText();
     else if (ctx->OpenBrace()) lit = " " + ctx->OpenBrace()->getText();
     if (ctx->Function()) lit1 = " " + ctx->Function()->getText();
-    if (ctx->Async()) lit1 = "will not be  implemented";
+    if (ctx->Async()) lit1 = " " + ctx->Async()->getText() + " will not be  implemented";
     treeString << "visitAnoymousFunctionDecl" << lit1 << lit << std::endl;
 
     auto vc = visitChildren(ctx);
@@ -717,25 +753,11 @@ antlrcpp::Any Visitor::visitBlock(JavaScriptParser::BlockContext *ctx) {
 antlrcpp::Any Visitor::visitWithStatement(JavaScriptParser::WithStatementContext *ctx) {
     nesting += 2;
     printWhiteSpace();
-    std::string lit;
-    if (ctx->OpenParen()) lit = " " + ctx->OpenParen()->getText();
-    treeString << "WithStatement " << ctx->With()->getText() << lit<< std::endl;
-    auto vc = visitChildren(ctx);
-    if (ctx->CloseParen()) {
-        printWhiteSpace();
-        treeString << ctx->CloseParen()->getText() << std::endl;
-    }
+    std::string lit1;
+    if (ctx->With()) lit1 = "will not be  implemented";
+    treeString << "With " << lit1 << std::endl;
     nesting -= 2;
-    return vc;
-}
-
-antlrcpp::Any Visitor::visitFormalParameterList(JavaScriptParser::FormalParameterListContext *ctx) {
-    nesting += 2;
-    printWhiteSpace();
-    treeString << "FormalParameterList" << std::endl;
-    auto vc = visitChildren(ctx);
-    nesting -= 2;
-    return vc;
+    return 1;
 }
 
 antlrcpp::Any Visitor::visitWhileStatement(JavaScriptParser::WhileStatementContext *ctx) {
@@ -743,7 +765,7 @@ antlrcpp::Any Visitor::visitWhileStatement(JavaScriptParser::WhileStatementConte
     printWhiteSpace();
     std::string lit;
     if (ctx->OpenParen()) lit = " " + ctx->OpenParen()->getText();
-    treeString << "WithStatement " << ctx->While()->getText() << lit<< std::endl;
+    treeString << "WhileStatement " << ctx->While()->getText() << lit<< std::endl;
     auto vc = visitChildren(ctx);
     if (ctx->CloseParen()) {
         printWhiteSpace();
@@ -877,7 +899,7 @@ antlrcpp::Any Visitor::visitFunctionDeclaration(JavaScriptParser::FunctionDeclar
     printWhiteSpace();
     std::string lit, lit1;
     if (ctx->Function()) lit1 = " " + ctx->Function()->getText();
-    if (ctx->Async()) lit1 = "will not be  implemented";
+    if (ctx->Async()) lit1 = " " + ctx->Async()->getText() + " will not be  implemented";
     treeString << "visitFunctionDecl" << lit1 << lit << std::endl;
 
     auto vc = visitChildren(ctx);
@@ -908,9 +930,9 @@ antlrcpp::Any Visitor::visitTryStatement(JavaScriptParser::TryStatementContext *
 antlrcpp::Any Visitor::visitThrowStatement(JavaScriptParser::ThrowStatementContext *ctx) {
     nesting += 2;
     printWhiteSpace();
-    std::string lit, lit1;
+    std::string lit1;
     if (ctx->Throw()) lit1 = "will not be  implemented";
-    treeString << "Throw " << lit1 << lit << std::endl;
+    treeString << "Throw " << lit1 << std::endl;
     nesting -= 2;
     return 1;
 }
@@ -925,13 +947,95 @@ antlrcpp::Any Visitor::visitYieldStatement(JavaScriptParser::YieldStatementConte
     return 1;
 }
 
+antlrcpp::Any Visitor::visitArrowFunction(JavaScriptParser::ArrowFunctionContext *ctx) {
+    std::string lit1;
+    if (ctx->Async()) {
+        nesting += 2;
+        printWhiteSpace();
+        treeString << ctx->Async()->getText() + " will not be implemented" << std::endl;
+        nesting -= 2;
+        return 1;
+    }
+    if (ctx->ARROW()) {
+        nesting += 2;
+        printWhiteSpace();
+        treeString << ctx->ARROW()->getText() + " will not be implemented" << std::endl;
+        nesting -= 2;
+        return 1;
+    }
+    treeString << "visitArrowFunction" << std::endl;
+    auto vc = visitChildren(ctx);
+    nesting -= 2;
+    return vc;
+}
 
+antlrcpp::Any Visitor::visitAwaitExpression(JavaScriptParser::AwaitExpressionContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    std::string lit1;
+    if (ctx->Await()) lit1 = "will not be  implemented";
+    treeString << "Await " << lit1 << std::endl;
+    nesting -= 2;
+    return 1;
+}
 
-//antlrcpp::Any Visitor::visitArgumentsExpression(JavaScriptParser::ArgumentsExpressionContext *ctx) {
-//    return JavaScriptParserBaseVisitor::visitArgumentsExpression(ctx);
-//}
+antlrcpp::Any Visitor::visitExportDeclaration(JavaScriptParser::ExportDeclarationContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    std::string lit1;
+    if (ctx->Export()) lit1 = "will not be  implemented";
+    treeString << "Export " << lit1 << std::endl;
+    nesting -= 2;
+    return 1;
+}
 
-//antlrcpp::Any Visitor::visitLet(JavaScriptParser::LetContext *ctx) {
-//    treeString << ctx->NonStrictLet()->getText() << " and " << ctx->StrictLet()->getText() << " will not be implemented"
-//               << std::endl;
-//}
+antlrcpp::Any Visitor::visitImportStatement(JavaScriptParser::ImportStatementContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    std::string lit1;
+    if (ctx->Import()) lit1 = "will not be  implemented";
+    treeString << "Import " << lit1 << std::endl;
+    nesting -= 2;
+    return 1;
+}
+
+antlrcpp::Any Visitor::visitExportDefaultDeclaration(JavaScriptParser::ExportDefaultDeclarationContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    std::string lit1;
+    if (ctx->Export()) lit1 = "will not be  implemented";
+    treeString << "Export " << lit1 << std::endl;
+    nesting -= 2;
+    return 1;
+}
+
+antlrcpp::Any Visitor::visitClassDeclaration(JavaScriptParser::ClassDeclarationContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    std::string lit1;
+    if (ctx->Class()) lit1 = "will not be  implemented";
+    treeString << "Class " << lit1 << std::endl;
+    nesting -= 2;
+    return 1;
+}
+
+antlrcpp::Any Visitor::visitImportExpression(JavaScriptParser::ImportExpressionContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    std::string lit1;
+    if (ctx->Import()) lit1 = "will not be  implemented";
+    treeString << "Import " << lit1 << std::endl;
+    nesting -= 2;
+    return 1;
+}
+
+antlrcpp::Any Visitor::visitClassExpression(JavaScriptParser::ClassExpressionContext *ctx) {
+    nesting += 2;
+    printWhiteSpace();
+    std::string lit1;
+    if (ctx->Class()) lit1 = "will not be  implemented";
+    treeString << "Class " << lit1 << std::endl;
+    nesting -= 2;
+    return 1;
+}
+

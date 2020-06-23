@@ -1,13 +1,11 @@
 Program Start
 --ForInStatement for (
-----VariableDeclaration
+----VariableDeclarationList
 ------const
---------Identifier  x
-----ExpressionSequence
-------Identifier  list
-----ExpressionSequence
-------Identifier  process
-------Arguments (
---------Identifier  x
-------)
+------Identifier  x
+----Identifier  list
+----Identifier  process
+----Arguments (
+------Identifier  x
+----)
 --)

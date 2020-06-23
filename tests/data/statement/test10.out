@@ -1,10 +1,9 @@
 Program Start
 --IfStatement if (
-----ExpressionSequence
-------Identifier  morning
-----VariableDeclaration
+----Identifier  morning
+----VariableDeclarationList
 ------var
---------Identifier  x
---------Literal
-----------NumericLiteral 0
+------Identifier  x
+------Literal
+--------NumericLiteral 0
 --)

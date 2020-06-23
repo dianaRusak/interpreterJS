@@ -1,15 +1,12 @@
 Program Start
---WithStatement while (
-----ExpressionSequence
-------Literal true
+--WhileStatement while (
+----Literal true
 ----{
 ------IfStatement if (
---------ExpressionSequence
-----------Identifier  x
+--------Identifier  x
 --------BreakStatement break
 ------else
---------ExpressionSequence
-----------Identifier  y
+--------Identifier  y
 ------)
 ----}
 --)

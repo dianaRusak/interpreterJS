@@ -1,7 +1,6 @@
 Program Start
-  ExpressionSequence
-    BitXOrExpression ^
-      BitXOrExpression ^
-        Identifier x
-        Identifier y
-      Identifier z
+--BitXOrExpression ^
+----BitXOrExpression ^
+------Identifier  x
+------Identifier  y
+----Identifier  z

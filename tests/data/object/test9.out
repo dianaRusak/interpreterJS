@@ -1,12 +1,11 @@
 Program Start
---ExpressionSequence
-----AssignmentExpression =
-------Identifier x
-------ObjectLiteral {
---------Getter
-----------Identifier get
-----------PropertyName
-------------Identifier undef
---------FunctionBody {
---------}
+--AssignmentExpression =
+----Identifier  x
+----ObjectLiteral {
+------Getter
+--------Identifier  get
+--------PropertyName
+----------Identifier  undef
+------FunctionBody {
 ------}
+----}

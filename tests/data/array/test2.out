@@ -1,11 +1,10 @@
 Program Start
-  ExpressionSequence
-    AssignmentExpression =
-      Identifier x
-      ElementList
-        Literal
-          NumericLiteral 1
-        Literal
-          NumericLiteral 2
-        Literal
-          NumericLiteral 3
+--AssignmentExpression =
+----Identifier  x
+----ElementList
+------Literal
+--------NumericLiteral 1
+------Literal
+--------NumericLiteral 2
+------Literal
+--------NumericLiteral 3

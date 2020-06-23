@@ -1,5 +1,4 @@
 Program Start
-  ExpressionSequence
-    BitLogicalOrExpression ||
-      Identifier x
-      Identifier y
+--BitLogicalOrExpression ||
+----Identifier  x
+----Identifier  y

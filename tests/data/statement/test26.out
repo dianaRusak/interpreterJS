@@ -3,7 +3,6 @@ Program Start
 ----Identifier  a
 ----FunctionBody {
 ------Statement return
---------ExpressionSequence
-----------Literal 'hello \
+--------Literal 'hello \
   	world'
 ----}

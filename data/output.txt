@@ -1,19 +1,9 @@
 Program Start
---ExpressionSequence
-----ParenthesizedExpression (
-------ExpressionSequence
---------ObjectLiteral {
-----------PropertySetter (
-------------Setter
---------------Identifier set
---------------PropertyName
-----------------Identifier x
-------------FormalParameterArg  =
---------------Identifier a
---------------Literal
-----------------NumericLiteral 0
-------------FunctionBody {
-------------}
-----------)
---------}
-----)
+--ForOfStatement for (
+----Identifier  x
+----Identifier  of
+----let will not be implemented
+Identifier 
+----{
+----}
+--)

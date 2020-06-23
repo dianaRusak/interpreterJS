@@ -1,19 +1,18 @@
 Program Start
---ExpressionSequence
-----ParenthesizedExpression (
-------ExpressionSequence
---------ObjectLiteral {
-----------PropertySetter (
-------------Setter
---------------Identifier set
---------------PropertyName
-----------------Identifier x
-------------FormalParameterArg  =
---------------Identifier a
---------------Literal
-----------------NumericLiteral 0
-------------FunctionBody {
-------------}
-----------)
+--ParenthesizedExpression (
+----ObjectLiteral {
+------PropertySetter (
+--------Setter
+----------Identifier  set
+----------PropertyName
+------------Identifier  x
+--------FormalParameterArg  =( 
+----------Identifier  a
+----------Literal
+------------NumericLiteral 0
+--------)
+--------FunctionBody {
 --------}
-----)
+------)
+----}
+--)

@@ -133,14 +133,3 @@ TEST_CASE("unary_12", "[unary]") {
 
     REQUIRE(expected == result);
 }
-
-TEST_CASE("unary_13", "[unary]") {
-    std::string inPath("test13.in"), outPath("test13.out");
-    ParseManager pm(inPath);
-    std::string result = pm.Parse();
-
-    std::ifstream expectedTreeFile(outPath);
-    std::string expected((std::istreambuf_iterator<char>(expectedTreeFile)), std::istreambuf_iterator<char>());
-
-    REQUIRE(expected == result);
-}

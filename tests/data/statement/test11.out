@@ -1,14 +1,11 @@
 Program Start
 --IfStatement if (
-----ExpressionSequence
-------Identifier  morning
-----ExpressionSequence
-------Identifier  goodMorning
-------Arguments (
-------)
+----Identifier  morning
+----Identifier  goodMorning
+----Arguments (
+----)
 --else
-----ExpressionSequence
-------Identifier  goodDay
-------Arguments (
-------)
+----Identifier  goodDay
+----Arguments (
+----)
 --)

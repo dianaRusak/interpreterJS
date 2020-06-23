@@ -1,23 +1,23 @@
 Program Start
---ExpressionSequence
-----Literal "use strict"
---VariableDeclaration 2
+--Literal "use strict"
+--VariableDeclarationList
 ----var
-------Identifier x
-------ObjectLiteral {
---------PropertySetter (
-----------Setter
-------------Identifier set
-------------PropertyName
---------------Identifier i
-----------FormalParameterArg 
-------------Identifier x
-----------FunctionBody {
-----------}
---------)
---------PropertyExpressionAssignment
+----Identifier  x
+----ObjectLiteral {
+------PropertySetter (
+--------Setter
+----------Identifier  set
 ----------PropertyName
-------------Identifier i
-----------Literal
-------------NumericLiteral 42
-------}
+------------Identifier  i
+--------FormalParameterArg ( 
+----------Identifier  x
+--------)
+--------FunctionBody {
+--------}
+------)
+------PropertyExpressionAssignment
+--------PropertyName
+----------Identifier  i
+--------Literal
+----------NumericLiteral 42
+----}

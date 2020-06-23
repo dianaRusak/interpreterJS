@@ -1,8 +1,7 @@
 Program Start
 --Identifier  done
---WithStatement while (
-----ExpressionSequence
-------Literal true
+--WhileStatement while (
+----Literal true
 ----{
 ------ContinueStatement continue
 --------Identifier  done

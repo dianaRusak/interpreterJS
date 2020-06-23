@@ -1,8 +1,8 @@
 Program Start
-  ExpressionSequence
-    Arguments '.' 
-      Identifier universe
-      Arguments '(' 
-        NumericLiteral 42
-      Arguments ')' 
-      Identifier galaxies
+--Arguments '.' 
+----Identifier  universe
+----Arguments (
+------Literal
+--------NumericLiteral 42
+----)
+----Identifier  galaxies

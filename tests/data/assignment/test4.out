@@ -1,5 +1,5 @@
 Program Start
-  ExpressionSequence
-    Identifier x
-    Assignmentor *=
-    NumericLiteral 42
+--Identifier  x
+-- *=
+--Literal
+----NumericLiteral 42

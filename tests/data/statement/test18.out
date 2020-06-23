@@ -1,18 +1,15 @@
 Program Start
 --DoStatement do (
 ----{
-------ExpressionSequence
---------PostIncrementExpression ++
-----------Identifier  x
-------ExpressionSequence
---------PostDecreaseExpression --
-----------Identifier  y
+------PostIncrementExpression ++
+--------Identifier  x
+------PostDecreaseExpression --
+--------Identifier  y
 ----}
 --while (
-----ExpressionSequence
-------EqualityExpression <
---------Identifier  x
---------Literal
-----------NumericLiteral 10
+----EqualityExpression <
+------Identifier  x
+------Literal
+--------NumericLiteral 10
 --)
 --)

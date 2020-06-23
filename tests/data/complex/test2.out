@@ -1,13 +1,14 @@
 Program Start
-  ExpressionSequence
-    AdditiveExpression +
-      AdditiveExpression +
-        Identifier a
-        ExpressionSequence
-          EqualityExpression <
-            Identifier b
-            ExpressionSequence
-              MultiplicativeExpression *
-                Identifier c
-                Identifier d
-      Identifier e
+--AdditiveExpression +
+----AdditiveExpression +
+------Identifier  a
+------ParenthesizedExpression (
+--------EqualityExpression <
+----------Identifier  b
+----------ParenthesizedExpression (
+------------MultiplicativeExpression *
+--------------Identifier  c
+--------------Identifier  d
+----------)
+------)
+----Identifier  e

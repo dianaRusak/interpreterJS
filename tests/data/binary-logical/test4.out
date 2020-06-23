@@ -1,7 +1,6 @@
 Program Start
-  ExpressionSequence
-    BitLogicalAndExpression &&
-      BitLogicalAndExpression &&
-        Identifier x
-        Identifier y
-      Identifier z
+--BitLogicalAndExpression &&
+----BitLogicalAndExpression &&
+------Identifier  x
+------Identifier  y
+----Identifier  z

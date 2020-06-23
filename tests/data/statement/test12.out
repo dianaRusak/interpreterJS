@@ -1,10 +1,8 @@
 Program Start
 --IfStatement if (
-----ExpressionSequence
-------Literal true
-----ExpressionSequence
-------Identifier  that
-------Arguments (
-------)
+----Literal true
+----Identifier  that
+----Arguments (
+----)
 --else
 --)

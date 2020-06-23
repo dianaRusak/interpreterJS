@@ -1,6 +1,5 @@
 Program Start
-  ExpressionSequence
-    AssignmentExpression =
-      Identifier x
-      ElementList
-        null
+--AssignmentExpression =
+----Identifier  x
+----ElementList
+------null

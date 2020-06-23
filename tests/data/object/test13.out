@@ -1,20 +1,19 @@
 Program Start
---ExpressionSequence
-----AssignmentExpression =
-------Identifier x
-------ObjectLiteral {
---------PropertySetter (
-----------Setter
-------------Identifier set
-------------PropertyName
---------------ReservedWord null
-----------FormalParameterArg 
-------------Identifier w
-----------FunctionBody {
-------------ExpressionSequence
---------------AssignmentExpression =
-----------------Identifier m_null
-----------------Identifier w
-----------}
+--AssignmentExpression =
+----Identifier  x
+----ObjectLiteral {
+------PropertySetter (
+--------Setter
+----------Identifier  set
+----------PropertyName
+------------ReservedWord null
+--------FormalParameterArg ( 
+----------Identifier  w
 --------)
-------}
+--------FunctionBody {
+----------AssignmentExpression =
+------------Identifier  m_null
+------------Identifier  w
+--------}
+------)
+----}

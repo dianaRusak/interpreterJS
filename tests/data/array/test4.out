@@ -1,5 +1,5 @@
 Program Start
-  VariableDeclaration
-    var
-      Identifier source
-      Literal 'F = []'
+--VariableDeclarationList
+----var
+----Identifier  source
+----Literal 'F = []'

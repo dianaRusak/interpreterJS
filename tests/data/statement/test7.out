@@ -1,9 +1,7 @@
 Program Start
---ExpressionSequence
-----Literal "use strict"
+--Literal "use strict"
 --IfStatement if (
-----ExpressionSequence
-------Literal true
+----Literal true
 ----visitFunctionDecl function
 ------Identifier  f
 ------FunctionBody {

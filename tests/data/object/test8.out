@@ -1,15 +1,13 @@
 Program Start
---ExpressionSequence
-----AssignmentExpression =
-------Identifier x
-------ObjectLiteral {
---------Getter
-----------Identifier get
-----------PropertyName
-------------Identifier width
---------FunctionBody {
-----------Statement return
-------------ExpressionSequence
---------------Identifier m_width
---------}
+--AssignmentExpression =
+----Identifier  x
+----ObjectLiteral {
+------Getter
+--------Identifier  get
+--------PropertyName
+----------Identifier  width
+------FunctionBody {
+--------Statement return
+----------Identifier  m_width
 ------}
+----}

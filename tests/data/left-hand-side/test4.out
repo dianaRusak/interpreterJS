@@ -1,7 +1,6 @@
 Program Start
-  ExpressionSequence
-    Arguments '.' 
-      Arguments '.' 
-        Identifier universe
-        Identifier milkyway
-      Identifier solarsystem
+--Arguments '.' 
+----Arguments '.' 
+------Identifier  universe
+------Identifier  milkyway
+----Identifier  solarsystem

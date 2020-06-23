@@ -4,7 +4,7 @@
 
 TEST_CASE("other_1", "[other]") {
     std::string inPath("test1.in"), outPath("test1.out");
-    ParseManager pm(inPath, outPath);
+    ParseManager pm(inPath);
     std::string result = pm.Parse();
 
     std::ifstream expectedTreeFile(outPath);
@@ -15,7 +15,7 @@ TEST_CASE("other_1", "[other]") {
 
 TEST_CASE("other_2", "[other]") {
     std::string inPath("test2.in"), outPath("test2.out");
-    ParseManager pm(inPath, outPath);
+    ParseManager pm(inPath);
     std::string result = pm.Parse();
 
     std::ifstream expectedTreeFile(outPath);
@@ -26,7 +26,7 @@ TEST_CASE("other_2", "[other]") {
 
 TEST_CASE("other_3", "[other]") {
     std::string inPath("test3.in"), outPath("test3.out");
-    ParseManager pm(inPath, outPath);
+    ParseManager pm(inPath);
     std::string result = pm.Parse();
 
     std::ifstream expectedTreeFile(outPath);

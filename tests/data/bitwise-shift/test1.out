@@ -1,5 +1,4 @@
 Program Start
-  ExpressionSequence
-    BitShiftExpression <<
-      Identifier x
-      Identifier y
+--BitShiftExpression <<
+----Identifier  x
+----Identifier  y

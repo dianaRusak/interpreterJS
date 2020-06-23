@@ -1,5 +1,4 @@
 Program Start
-  ExpressionSequence
-    BitAndExpression &
-      Identifier x
-      Identifier y
+--BitAndExpression &
+----Identifier  x
+----Identifier  y

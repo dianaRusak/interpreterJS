@@ -1,4 +1,3 @@
 Program Start
-  ExpressionSequence
-    Literal
-      NumericLiteral 0xabc
+--Literal
+----NumericLiteral 0xabc

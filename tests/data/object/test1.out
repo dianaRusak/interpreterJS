@@ -1,6 +1,5 @@
 Program Start
---ExpressionSequence
-----AssignmentExpression =
-------Identifier x
-------ObjectLiteral {
-------}
+--AssignmentExpression =
+----Identifier  x
+----ObjectLiteral {
+----}

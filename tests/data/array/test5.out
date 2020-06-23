@@ -1,7 +1,6 @@
 Program Start
-  ExpressionSequence
-    AssignmentExpression =
-      Identifier x
-      ElementList
-        Literal
-          NumericLiteral 42
+--AssignmentExpression =
+----Identifier  x
+----ElementList
+------Literal
+--------NumericLiteral 42

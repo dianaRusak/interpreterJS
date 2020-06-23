@@ -1,11 +1,9 @@
 Program Start
 --DoStatement do (
-----ExpressionSequence
-------Identifier  keep
-------Arguments (
-------)
+----Identifier  keep
+----Arguments (
+----)
 --while (
-----ExpressionSequence
-------Literal true
+----Literal true
 --)
 --)

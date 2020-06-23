@@ -1,8 +1,6 @@
 Program Start
-  ExpressionSequence
-    OpenBracket [
-      Identifier universe
-      ExpressionSequence
-        Identifier galaxyName
-        Identifier otherUselessName
-    CloseBracket ]
+--[
+----Identifier  universe
+----Identifier  galaxyName
+----Identifier  otherUselessName
+---- ]

@@ -1,4 +1,3 @@
 Program Start
---ExpressionSequence
-----BitNotExpression ~
-------Identifier x
+--BitNotExpression ~
+----Identifier  x

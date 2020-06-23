@@ -1,6 +1,5 @@
 Program Start
---ExpressionSequence
-----MultiplicativeExpression /
-------ThisExpression this
-------Literal
---------NumericLiteral 100
+--MultiplicativeExpression /
+----ThisExpression this
+----Literal
+------NumericLiteral 100

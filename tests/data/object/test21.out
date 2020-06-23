@@ -1,16 +1,11 @@
 Program Start
---ExpressionSequence
-----ParenthesizedExpression (
-------ExpressionSequence
---------ObjectLiteral {
-----------PropertyExpressionAssignment
-------------PropertyName
-------------[
---------------Identifier a
-------------]
-------------ArrowFunctionParameters (
-------------)
-------------ObjectLiteral {
-------------}
---------}
-----)
+--ParenthesizedExpression (
+----ObjectLiteral {
+------PropertyExpressionAssignment
+--------PropertyName
+--------[
+----------Identifier  a
+--------]
+--------=> will not be implemented
+----}
+--)

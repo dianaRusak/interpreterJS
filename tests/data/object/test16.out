@@ -1,29 +1,27 @@
 Program Start
---ExpressionSequence
-----AssignmentExpression =
-------Identifier x
-------ObjectLiteral {
---------Getter
-----------Identifier get
-----------PropertyName
-------------Identifier width
---------FunctionBody {
-----------Statement return
-------------ExpressionSequence
---------------Identifier m_width
---------}
---------PropertySetter (
-----------Setter
-------------Identifier set
-------------PropertyName
---------------Identifier width
-----------FormalParameterArg 
-------------Identifier width
-----------FunctionBody {
-------------ExpressionSequence
---------------AssignmentExpression =
-----------------Identifier m_width
-----------------Identifier width
-----------}
---------)
+--AssignmentExpression =
+----Identifier  x
+----ObjectLiteral {
+------Getter
+--------Identifier  get
+--------PropertyName
+----------Identifier  width
+------FunctionBody {
+--------Statement return
+----------Identifier  m_width
 ------}
+------PropertySetter (
+--------Setter
+----------Identifier  set
+----------PropertyName
+------------Identifier  width
+--------FormalParameterArg ( 
+----------Identifier  width
+--------)
+--------FunctionBody {
+----------AssignmentExpression =
+------------Identifier  m_width
+------------Identifier  width
+--------}
+------)
+----}

@@ -1,21 +1,19 @@
 Program Start
---ExpressionSequence
-----ParenthesizedExpression (
-------ExpressionSequence
---------ObjectLiteral {
-----------PropertyExpressionAssignment
-------------PropertyName
-------------[
---------------Literal "__proto__"
-------------]
-------------Literal
---------------NumericLiteral 0
-----------PropertyExpressionAssignment
-------------PropertyName
-------------[
---------------Literal "__proto__"
-------------]
-------------Literal
---------------NumericLiteral 0
---------}
-----)
+--ParenthesizedExpression (
+----ObjectLiteral {
+------PropertyExpressionAssignment
+--------PropertyName
+--------[
+----------Literal "__proto__"
+--------]
+--------Literal
+----------NumericLiteral 0
+------PropertyExpressionAssignment
+--------PropertyName
+--------[
+----------Literal "__proto__"
+--------]
+--------Literal
+----------NumericLiteral 0
+----}
+--)

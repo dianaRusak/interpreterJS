@@ -1,7 +1,6 @@
 Program Start
---WithStatement while (
-----ExpressionSequence
-------Literal true
+--WhileStatement while (
+----Literal true
 ----{
 ------BreakStatement break
 ----}

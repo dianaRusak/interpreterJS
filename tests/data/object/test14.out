@@ -1,11 +1,10 @@
 Program Start
---ExpressionSequence
-----AssignmentExpression =
-------Identifier x
-------ObjectLiteral {
---------PropertyExpressionAssignment
-----------PropertyName
-------------Identifier get
-----------Literal
-------------NumericLiteral 42
-------}
+--AssignmentExpression =
+----Identifier  x
+----ObjectLiteral {
+------PropertyExpressionAssignment
+--------PropertyName
+----------Identifier  get
+--------Literal
+----------NumericLiteral 42
+----}

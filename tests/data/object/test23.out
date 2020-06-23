@@ -1,12 +1,10 @@
 Program Start
---ExpressionSequence
-----ParenthesizedExpression (
-------ExpressionSequence
---------ObjectLiteral {
-----------PropertyExpressionAssignment
-------------PropertyName
-------------"["
-------------Literal
---------------NumericLiteral 42
---------}
-----)
+--ParenthesizedExpression (
+----ObjectLiteral {
+------PropertyExpressionAssignment
+--------PropertyName
+--------"["
+--------Literal
+----------NumericLiteral 42
+----}
+--)

@@ -1,4 +1,5 @@
 Program Start
-  ExpressionSequence
-    AdditiveExpression +
-      NumericLiteral 42
+--AdditiveExpression +
+----Literal "use strict"
+----Literal
+------NumericLiteral 42

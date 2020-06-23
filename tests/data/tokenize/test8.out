@@ -1,6 +1,6 @@
 Program Start
---Identifier f
---FunctionBody {
---}
---ExpressionSequence
-----Literal /42/
+--visitFunctionDecl function
+----Identifier  f
+----FunctionBody {
+----}
+--Literal /42/

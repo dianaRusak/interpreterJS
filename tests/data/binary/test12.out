@@ -1,7 +1,6 @@
 Program Start
-  ExpressionSequence
-    BitShiftExpression <<
-      BitShiftExpression <<
-        Identifier x
-        Identifier y
-      Identifier z
+--BitShiftExpression <<
+----BitShiftExpression <<
+------Identifier  x
+------Identifier  y
+----Identifier  z

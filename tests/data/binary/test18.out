@@ -1,4 +1,5 @@
 Program Start
-  ExpressionSequence
-    AdditiveExpression +
-      Identifier bar
+--AdditiveExpression +
+----Literal '\
+'
+----Identifier  bar

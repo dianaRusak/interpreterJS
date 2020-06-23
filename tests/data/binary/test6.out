@@ -1,7 +1,6 @@
 Program Start
-  ExpressionSequence
-    AdditiveExpression +
-      Identifier x
-      MultiplicativeExpression /
-        Identifier y
-        Identifier z
+--AdditiveExpression +
+----Identifier  x
+----MultiplicativeExpression /
+------Identifier  y
+------Identifier  z

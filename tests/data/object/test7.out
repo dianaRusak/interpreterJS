@@ -1,16 +1,15 @@
 Program Start
---ExpressionSequence
-----AssignmentExpression =
-------Identifier x
-------ObjectLiteral {
---------PropertyExpressionAssignment
-----------PropertyName
-------------Identifier x
-----------Literal
-------------NumericLiteral 1
---------PropertyExpressionAssignment
-----------PropertyName
-------------Identifier x
-----------Literal
-------------NumericLiteral 2
-------}
+--AssignmentExpression =
+----Identifier  x
+----ObjectLiteral {
+------PropertyExpressionAssignment
+--------PropertyName
+----------Identifier  x
+--------Literal
+----------NumericLiteral 1
+------PropertyExpressionAssignment
+--------PropertyName
+----------Identifier  x
+--------Literal
+----------NumericLiteral 2
+----}

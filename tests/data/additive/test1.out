@@ -1,5 +1,4 @@
 Program Start
-  ExpressionSequence
-    AdditiveExpression +
-      Identifier x
-      Identifier y
+--AdditiveExpression +
+----Identifier  x
+----Identifier  y

@@ -1,6 +1,6 @@
 Program Start
---VariableDeclaration 2
+--VariableDeclarationList
 ----var
-------Identifier answer
-------Literal
---------NumericLiteral 42
+----Identifier  answer
+----Literal
+------NumericLiteral 42

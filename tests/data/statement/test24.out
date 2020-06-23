@@ -1,10 +1,8 @@
 Program Start
---ExpressionSequence
-----ParenthesizedExpression (
-------ExpressionSequence
---------visitAnoymousFunctionDecl function (
-----------FunctionBody {
-------------Statement return
-----------}
---------)
+--ParenthesizedExpression (
+----visitAnoymousFunctionDecl function (
+------FunctionBody {
+--------Statement return
+------}
 ----)
+--)

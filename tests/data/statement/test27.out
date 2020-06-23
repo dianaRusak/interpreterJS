@@ -3,8 +3,7 @@ Program Start
 ----Identifier  a
 ----FunctionBody {
 ------Statement return
---------ExpressionSequence
-----------Literal `
+--------Literal `
   	test
   `
 ----}

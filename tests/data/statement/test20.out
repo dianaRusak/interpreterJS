@@ -1,8 +1,7 @@
 Program Start
 --ForStatement for (
-----ExpressionSequence
-------AssignmentExpression =
---------Identifier  x
---------Literal
-----------NumericLiteral 0
+----AssignmentExpression =
+------Identifier  x
+------Literal
+--------NumericLiteral 0
 --)

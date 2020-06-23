@@ -1,9 +1,7 @@
 Program Start
 --IfStatement if (
-----ExpressionSequence
-------Literal false
+----Literal false
 ----{
-------ExpressionSequence
---------Literal /42/
+------Literal /42/
 ----}
 --)

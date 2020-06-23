@@ -1,12 +1,12 @@
 Program Start
-  ExpressionSequence
-    Arguments '.' 
-      Arguments '.' 
-        Arguments '.' 
-          Identifier earth
-          Identifier asia
-        Identifier Indonesia
-      Identifier prepareForElection
-    Arguments '(' 
-      NumericLiteral 2014
-    Arguments ')' 
+--Arguments '.' 
+----Arguments '.' 
+------Arguments '.' 
+--------Identifier  earth
+--------Identifier  asia
+------Identifier  Indonesia
+----Identifier  prepareForElection
+--Arguments (
+----Literal
+------NumericLiteral 2014
+--)
