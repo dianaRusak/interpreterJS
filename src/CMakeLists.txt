@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(testInter)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 add_library(interpreter_lib STATIC
         ${PROJECT_SOURCE_DIR}/gen/JavaScriptLexer.cpp

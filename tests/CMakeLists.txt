@@ -1,28 +1,9 @@
 project(unit_tests)
 
+set(CMAKE_CXX_STANDARD 17)
+
 SET(TEST_SOURCES
-        test_test.cpp
-        data/additive/test_test.cpp
-        data/array/test_test.cpp
-        data/assignment/test_test.cpp
-        data/binary/test_test.cpp
-        data/binary-bitwise/test_test.cpp
-        data/binary-logical/test_test.cpp
-        data/bitwise-shift/test_test.cpp
-        data/complex/test_test.cpp
-        data/conditional/test_test.cpp
-        data/equality/test_test.cpp
-        data/grouping/test_test.cpp
-        data/left-hand-side/test_test.cpp
-        data/multiplicative/test_test.cpp
-        data/numeric-literal/test_test.cpp
-        data/object/test_test.cpp
-        data/other/test_test.cpp
-        data/postfix/test_test.cpp
-        data/relational/test_test.cpp
-        data/unary/test_test.cpp
-        data/tokenize/test_test.cpp
-        data/statement/test_test.cpp)
+        test_test.cpp)
 
 add_executable(interpreter_tests ${TEST_SOURCES})
 target_link_libraries(interpreter_tests PRIVATE interpreter_lib catch)

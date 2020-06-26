@@ -1,9 +1,0 @@
-Program Start
-  ExpressionSequence
-    AdditiveExpression +
-      AdditiveExpression +
-        ExpressionSequence
-          NumericLiteral 1
-        ExpressionSequence
-          NumericLiteral 2
-      NumericLiteral 3
